@@ -13,7 +13,7 @@ io.on('connection', (socket) => {
     let currRoom
 
     console.log('connected', socket.id);
-
+    console.log('yo');
     socket.on('create', ({room})=>{
         currRoom = room;
         socket.join(room);
