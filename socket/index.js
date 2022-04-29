@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { createServer }= require('http');
-
+const PORT = process.env.PORT || 8900;
 const { Server } = require('socket.io');
 const httpServer = createServer();
 // const io = require('socket.io')(8900, {
@@ -47,4 +47,4 @@ io.on('connection', (socket) => {
     })
 });
 
-httpServer.listen(9000)
+httpServer.listen(PORT)
