@@ -4,7 +4,8 @@ const io = require('socket.io')(PORT, {
     cors:{
         origin: 'https://venturechat.netlify.app',
         credentials: true,
-        optionsSuccessStatus: 200
+        optionsSuccessStatus: 200,
+        methods: ["GET", "POST"]
     }
 });
 
