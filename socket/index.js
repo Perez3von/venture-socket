@@ -20,11 +20,6 @@ const io = new Server( httpServer, {
     }
 });
 
-
-
-
-
-// let users = [];
 //track users? rooms?npm 
 // <-- this is the problem
 io.on('connection', (socket) => {
