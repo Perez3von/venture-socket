@@ -1,14 +1,22 @@
 require('dotenv').config();
-
-
-const io = require('socket.io')(8900, {
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+const httpServer = createServer();
+// const io = require('socket.io')(8900, {
+//     cors:{
+//         origin: 'https://venturechat.netlify.app',
+//         credentials: true,
+//         optionsSuccessStatus: 200,
+//         methods: ['GET, POST']
+//     }
+// });
+const io = new Server( httpServer, {
     cors:{
-        origin: 'https://venture-chat.netlify.app',
-        credentials: true,
-        optionsSuccessStatus: 200,
-        methods: ['GET, POST']
+        origin: 'http://localhost:3000'
     }
 });
+
+
 
 
 
@@ -40,3 +48,4 @@ io.on('connection', (socket) => {
     })
 });
 
+httpServer.listen(8900)
