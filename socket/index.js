@@ -12,7 +12,7 @@ const io = require('socket.io')(8900, {
 
 
 
-let users = [];
+// let users = [];
 //track users? rooms?npm 
 // <-- this is the problem
 io.on('connection', (socket) => {
