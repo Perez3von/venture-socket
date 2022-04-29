@@ -1,26 +1,15 @@
-require('dotenv').config();
-const { createServer }= require('http');
-const PORT = process.env.PORT || 8900;
-const { Server } = require('socket.io');
-const httpServer = createServer();
-// const io = require('socket.io')(8900, {
-//     cors:{
-//         origin: 'https://venturechat.netlify.app',
-//         credentials: true,
-//         optionsSuccessStatus: 200,
-//         methods: ['GET, POST']
-//     }
-// });
-const io = new Server( httpServer, {
+const io = require('socket.io')(8900, {
     cors:{
         origin: 'https://venturechat.netlify.app',
         credentials: true,
-        optionsSuccessStatus: 200,
-        methods: ['GET, POST']
+        optionsSuccessStatus: 200
     }
 });
 
-//track users? rooms?npm 
+
+
+let users = [];
+//track users? rooms?
 // <-- this is the problem
 io.on('connection', (socket) => {
     let currRoom
@@ -47,4 +36,3 @@ io.on('connection', (socket) => {
     })
 });
 
-httpServer.listen(PORT)
