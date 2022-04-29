@@ -1,6 +1,8 @@
+require('dotenv').config();
+const URL = process.env.REACT_URL;
 const io = require('socket.io')(8900, {
     cors:{
-        origin: 'http://localhost:3000'
+        origin: URL
     }
 });
 
