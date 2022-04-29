@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const io = require('socket.io')(8900, {
     cors:{
-        origin: 'https://venture-chat.netlify.app/',
+        origin: 'https://venture-chat.netlify.app',
         credentials: true,
         optionsSuccessStatus: 200,
         methods: ['GET, POST']
