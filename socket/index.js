@@ -1,5 +1,5 @@
 require('dotenv').config();
-const URL = process.env.REACT_URL;
+const URL = 'https://venture-chat.netlify.app/';
 const io = require('socket.io')(8900, {
     cors:{
         origin: URL
@@ -9,7 +9,7 @@ const io = require('socket.io')(8900, {
 
 
 let users = [];
-//track users? rooms?
+//track users? rooms?npm 
 // <-- this is the problem
 io.on('connection', (socket) => {
     let currRoom
