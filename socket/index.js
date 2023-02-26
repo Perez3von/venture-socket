@@ -15,13 +15,7 @@ const io = require('socket.io')(PORT, {
 //     }
 // });
 
-io.engine.on("headers", (headers) => {
-    headers.push(
-      ["Access-Control-Allow-Origin", "https://venturechat.netlify.app"],
-      ["Access-Control-Allow-Methods", "GET, POST"],
-      ["Access-Control-Allow-Headers", "Content-Type"],
-    );
-  });
+io.origins("https://venturechat.netlify.app");
 
 let community = new Map();
 
