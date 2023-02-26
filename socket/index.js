@@ -15,7 +15,6 @@ const io = require('socket.io')(PORT, {
 //     }
 // });
 
-io.origins("https://venturechat.netlify.app");
 
 let community = new Map();
 
